@@ -31,6 +31,8 @@ body header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -45,6 +47,19 @@ body header nav .logo {
   text-transform: uppercase;
   font-weight: 400;
   font-size: 1.2rem;
+}
+
+body header nav .hamburger {
+  background-color: transparent;
+  border: 0;
+  display: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+body header nav .hamburger:focus {
+  outline: none;
 }
 
 body header nav ul {
@@ -128,18 +143,7 @@ body header .hero .hero-img img {
 }
 
 body main .about {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 40px 0;
-  margin: 0 auto;
-  width: 90%;
+  padding: 20px 0;
 }
 
 body main .about .details {
@@ -152,12 +156,13 @@ body main .about .details {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0 50px;
+  padding: 0 20px;
+  margin: 0 auto;
 }
 
 body main .about .details p {
   display: block;
-  padding: 10px 20px;
+  padding: 10px;
 }
 
 body footer {
@@ -303,4 +308,29 @@ body footer .contact .form-section .form form .form-items button {
 body footer .contact .form-section .form form .form-items button:hover {
   background-color: greenyellow;
   color: white;
+}
+
+@media screen and (max-width: 767px) {
+  header .logo {
+    padding-right: 60%;
+  }
+  header nav {
+    display: inline-block;
+  }
+  header nav .nav-ul {
+    display: none;
+    width: 100%;
+  }
+  header nav .nav-ul.show {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #hamburger {
+    display: block;
+  }
 }
